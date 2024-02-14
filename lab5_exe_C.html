@@ -2,8 +2,8 @@
 =========================================================
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
+Author(s)   : Hutton Ledingham
+Submission  : Feb 14, 2024
 Description : DOM Elements.
 =========================================================
 -->
@@ -206,14 +206,32 @@ Description : DOM Elements.
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
 				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
+				var companyItems = document.getElementsByClassName("companyName");
+				for (var i = 0; i < companyItems.length; i++){
+					var item = companyItems[i];
+					item.style.border = "none";
+					item.textContent = "Hutton"
 
+				}
 
 				// Task 2: Change the background color of the navigation bar
-				
+				var bar = document.querySelector("nav");
+				bar.style.backgroundColor = "lightblue";
+
 
 				// Task 3: Hide the section titled 'What is full-stack?'
+				const whatIsFullStack = array.from(document.querySelectorAll("h2")).find((h2) => h2.textContent == 'What is full-stack?');
+			
 
+				if(whatIsFullStack){
+					whatIsFullStack.parentElement.style.visibility = "hidden";
+				}
 
+				var bar = document.querySelector("article");
+				bar.style.display = "none";
+
+				var fullStackSection = document.querySelector("article");
+    			fullStackSection.style.display = 'none';
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
 
 

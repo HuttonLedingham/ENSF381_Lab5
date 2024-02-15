@@ -2,7 +2,7 @@
 =========================================================
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
-Author(s)   : Hutton Ledingham
+Author(s)   : Hutton Ledingham, Isaac Jacob
 Submission  : Feb 14, 2024
 Description : DOM Elements.
 =========================================================
@@ -220,11 +220,13 @@ Description : DOM Elements.
 
 
 				// Task 3: Hide the section titled 'What is full-stack?'
-				const FullStack = Array.from(
+				const Section = Array.from(
 					document.querySelectorAll('h2')
-				).find((h2)=> h2.textContent === "What is full-stack?");
-				if(FullStack){
-					FullStack.parentElement.style.display = 'none';
+				)
+				.find((h2)=> h2.textContent === "What is full-stack?");
+				
+				if(Section){
+					Section.parentElement.style.display = 'none';
 				}
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
@@ -238,10 +240,10 @@ Description : DOM Elements.
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
 					const input = document.querySelectorAll('label');
-					for(const i of input){
-						const id = i.getAttribute('for');
-						const e = document.getElementById(id);
-						e.setAttribute('placeHolder', id);
+					for(const k of input){
+						const id = k.getAttribute('for');
+						const temp = document.getElementById(id);
+						temp.setAttribute('placeHolder', id);
 					}
 
 				// Task 6: Set the src attribute of the image
@@ -263,14 +265,16 @@ Description : DOM Elements.
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 					var buttonElement = document.querySelector("input[type=button]");
-					buttonElement.addEventListener('click', function(){
+					buttonElement.addEventListener('click', 
+					function(){
 						buttonElement.value = "Submitted";
 
 						buttonElement.disabled = "false";
 					})
 					
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-					document.querySelectorAll("aside ul li a").forEach((link)=>{
+					document.querySelectorAll("aside ul li a").forEach(
+					(link)=>{
 						link.style.color = 'green';
 					});
 

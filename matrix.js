@@ -87,6 +87,8 @@ function performOperation(operation) {
         matrix2 = getMatrixData2D('matrix2');
         
         let result = [];
+        console.log("Operation", operation);
+
         if (operation === 'add') {
             result = addMatrices(matrix1, matrix2);
         }
@@ -96,10 +98,9 @@ function performOperation(operation) {
         if (operation === 'multiply') {
             result = multiplyMatrices(matrix1, matrix2);
         }
-
-        showResult2D('The Result', 'matrix3', result);
-
-        console.log("Operation", operation);
+        if(result != null){
+            showResult2D('The Result', 'matrix3', result);
+        }
 
     }
     
@@ -141,7 +142,7 @@ const getMatrixData2D = function (matrixId) {
 
 
 // Add your matrix calculation functions here
-// The functions must check the posibility of calculation too.
+// The functions must check the possibility of calculation too.
 function addMatrices(matrix1, matrix2) {
     if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
         console.log("Cannot add matrices of different dimensions.");

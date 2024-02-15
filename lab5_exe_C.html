@@ -224,10 +224,9 @@ Description : DOM Elements.
 					document.querySelectorAll('h2')
 				)
 				.find((h2)=> h2.textContent === "What is full-stack?");
-				
-				if(Section){
-					Section.parentElement.style.display = 'none';
-				}
+
+				Section.parentElement.style.display = 'none';
+
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
 					const para = document.createElement("p");
@@ -249,9 +248,9 @@ Description : DOM Elements.
 				// Task 6: Set the src attribute of the image
 
 					let img = document.querySelector('img');
-					if(img){
-						img.setAttribute('src', './images/example.svg');
-					}
+
+					img.setAttribute('src', './images/example.svg');
+					
 				// Task 7: Add a new item in the navigation menu
 					const listElement = document.createElement("li");
 					const link = document.createElement("a")
@@ -274,8 +273,8 @@ Description : DOM Elements.
 					
 				// Task 9: Change the text color of each item in the 'Related Links' to green
 					document.querySelectorAll("aside ul li a").forEach(
-					(link)=>{
-						link.style.color = 'green';
+					(relatedLink)=>{
+						relatedLink.style.color = 'green';
 					});
 
 				// Task 10: Add a red solid border to the footer

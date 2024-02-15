@@ -63,10 +63,8 @@ const showResult2D = (title, containerId, dataArray) => {
             let td = document.createElement('td');
             let span = document.createElement('span');
             // Calculate the index in the dataArray based on current row and column
-            let index = i * cols + j;
-            if (index < dataArray.length) {
-                span.innerHTML = dataArray[index];
-            }
+            span.innerHTML = dataArray[i][j];
+            
             td.appendChild(span);
             tr.appendChild(td);
         }
@@ -83,29 +81,31 @@ function performOperation(operation) {
     let matrix2 = getMatrixData2D('matrix2');
     console.log("1st Matrix",matrix1);
     console.log("2nd Matrix", matrix2);
-    console.log("Operation", operation);
     // Just a test result
     
-    
-        let matrix1 = getMatrixData2D('matrix1');
-        let matrix2 = getMatrixData2D('matrix2');
+        matrix1 = getMatrixData2D('matrix1');
+        matrix2 = getMatrixData2D('matrix2');
         
-        let result;
+        let result = [];
         if (operation === 'add') {
             result = addMatrices(matrix1, matrix2);
-        } else if (operation === 'subtract') {
+        }
+        if (operation === 'subtract') {
             result = subtractMatrices(matrix1, matrix2);
-        } else if (operation === 'multiply') {
+        }
+        if (operation === 'multiply') {
             result = multiplyMatrices(matrix1, matrix2);
         }
-    
+
         showResult2D('The Result', 'matrix3', result);
+
+        console.log("Operation", operation);
+
     }
     
     // Call your matrix calculation functions here
     // For example: if (operation === 'add') { addMatrices(matrix1, matrix2); }
 	// prints suitable messages for impossible situation
-    showResult2D('The Result', 'matrix3',result); // use suitable function for printing results
 
 
 const getMatrixData1D = function (matrixId) {
@@ -155,8 +155,8 @@ function addMatrices(matrix1, matrix2) {
         }
         result.push(row);
     }
-    showResult2D('The Result', 'matrix3', result);
-}
+    return result;
+};
 
 const subtractMatrices = function (matrix1, matrix2) {
     if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
@@ -171,7 +171,8 @@ const subtractMatrices = function (matrix1, matrix2) {
         }
         result.push(row);
     }
-    showResult2D('The Result', 'matrix3', result);
+    return result;
+
 };
 
 const multiplyMatrices = (matrix1, matrix2) => {
@@ -191,5 +192,6 @@ const multiplyMatrices = (matrix1, matrix2) => {
         }
         result.push(row);
     }
-    showResult2D('The Result', 'matrix3', result);
+    return result;
+
 };

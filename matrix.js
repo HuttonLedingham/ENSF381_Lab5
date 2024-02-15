@@ -145,7 +145,7 @@ const getMatrixData2D = function (matrixId) {
 // The functions must check the possibility of calculation too.
 function addMatrices(matrix1, matrix2) {
     if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
-        console.log("Cannot add matrices of different dimensions.");
+        console.log("Adding Matrices of different dimensions is not possible.");
         return;
     }
     let result = [];
@@ -161,7 +161,7 @@ function addMatrices(matrix1, matrix2) {
 
 const subtractMatrices = function (matrix1, matrix2) {
     if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
-        console.log("Cannot subtract matrices of different dimensions.");
+        console.log("Subtracting Matrices of different dimensions is not possible.");
         return;
     }
     let result = [];
@@ -178,7 +178,7 @@ const subtractMatrices = function (matrix1, matrix2) {
 
 const multiplyMatrices = (matrix1, matrix2) => {
     if (matrix1[0].length !== matrix2.length) {
-        console.log("Cannot multiply matrices with incompatible dimensions.");
+        console.log("The dimensions of the matrices are impossible to multiply with.");
         return;
     }
     let result = [];

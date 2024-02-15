@@ -62,7 +62,7 @@ const showResult2D = (title, containerId, dataArray) => {
         for (let j = 0; j < dataArray[i].length; j++) {
             let td = document.createElement('td');
             let span = document.createElement('span');
-            // Calculate the index in the dataArray based on current row and column
+            
             span.innerHTML = dataArray[i][j];
             
             td.appendChild(span);

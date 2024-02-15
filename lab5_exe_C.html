@@ -220,11 +220,10 @@ Description : DOM Elements.
 
 
 				// Task 3: Hide the section titled 'What is full-stack?'
-				const Section = Array.from(
+				const h_2 = Array.from(
 					document.querySelectorAll('h2')
 				)
-				.find((h2)=> h2.textContent === "What is full-stack?");
-
+				Section = h_2.find((h2)=> h2.textContent === "What is full-stack?");
 				Section.parentElement.style.display = 'none';
 
 
@@ -272,14 +271,12 @@ Description : DOM Elements.
 					})
 					
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-					document.querySelectorAll("aside ul li a").forEach(
-					(relatedLink)=>{
-						relatedLink.style.color = 'green';
-					});
+					var links = document.querySelectorAll("aside ul li a");
+					links.forEach((relatedLink)=>{relatedLink.style.color = 'green';});
 
 				// Task 10: Add a red solid border to the footer
-				var footer = document.querySelector('footer');
-				footer.style.border = "2px solid red";
+					var footer = document.querySelector('footer');
+					footer.style.border = "2px solid red";
 			});
 		</script>
 	</body>
